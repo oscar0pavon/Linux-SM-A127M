@@ -59,6 +59,7 @@ modules.order
 #
 # Top-level generic files
 #
+arch/arm64/boot/Image
 /linux
 /modules-only.symvers
 /vmlinux
