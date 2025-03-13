@@ -45,16 +45,12 @@ if [ "$(basename $2)" = "Image.gz" ]; then
 else
 # Normal install
   echo "Installing normal kernel"
-  base=vmlinux
+  base=Linux
 fi
 
-if [ -f $4/$base-$1 ]; then
-  mv $4/$base-$1 $4/$base-$1.old
+if [ -f $4/$base ]; then
+  mv $4/$base $4/$base.old
 fi
-cat $2 > $4/$base-$1
+cat $2 > $4/$base
 
-# Install system map file
-if [ -f $4/System.map-$1 ]; then
-  mv $4/System.map-$1 $4/System.map-$1.old
-fi
-cp $3 $4/System.map-$1
+
